@@ -229,4 +229,73 @@ footer {
     padding: 30px;
     color: #555;
     font-size: 0.9rem;
+
+}
+/* --- ESTILOS PARA DISPOSITIVOS MÓVILES (DISEÑO RESPONSIVO) --- */
+@media (max-width: 768px) {
+
+    /* Ajustes generales de tamaño y espaciado */
+    body {
+        /* Hacemos el oso un poco más transparente para que no distraiga tanto */
+        background-image: linear-gradient(rgba(16, 26, 20, 0.3), rgba(16, 26, 20, 0.3)), url('https://iconape.com/wp-content/files/hi/194343/svg/194343.svg'), var(--bg-gradient);
+    }
+
+    .container {
+        width: 95%; /* Usamos más espacio de la pantalla */
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    /* --- Encabezado más compacto --- */
+    header {
+        padding: 2rem 1rem;
+    }
+
+    .header-content i {
+        font-size: 2.5rem; /* Icono un poco más pequeño */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Título principal más pequeño */
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* --- Tarjetas de riesgo optimizadas --- */
+    .risk-header {
+        padding: 15px;
+        flex-direction: column; /* Apilamos el título y la flecha en pantallas muy pequeñas si es necesario */
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .risk-title {
+        gap: 15px; /* Menos espacio entre el pictograma y el texto */
+    }
+
+    .risk-header h3 {
+        font-size: 1.2rem; /* Título de la tarjeta más legible */
+    }
+
+    .arrow {
+        position: absolute; /* Movemos la flecha a la esquina */
+        top: 20px;
+        right: 20px;
+    }
+
+    .risk-body {
+        padding: 0 20px;
+        color: var(--text-primary); /* Hacemos el texto un poco más brillante para mejor lectura */
+    }
+
+    /* --- Sección de Emergencia más clara --- */
+    .emergency-contact span {
+        font-size: 1.8rem; /* El número 911 un poco más pequeño */
+    }
 }
