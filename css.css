@@ -232,12 +232,20 @@ footer {
 
 }
 /* --- ESTILOS PARA DISPOSITIVOS MÓVILES (DISEÑO RESPONSIVO) --- */
+/* --- ESTILOS PARA DISPOSITIVOS MÓVILES (DISEÑO RESPONSIVO) --- */
 @media (max-width: 768px) {
 
     /* Ajustes generales de tamaño y espaciado */
     body {
-        /* Hacemos el oso un poco más transparente para que no distraiga tanto */
-        background-image: linear-gradient(rgba(16, 26, 20, 0.3), rgba(16, 26, 20, 0.3)), url('https://iconape.com/wp-content/files/hi/194343/svg/194343.svg'), var(--bg-gradient);
+        /* Hacemos el oso MUCHÍSIMO más transparente en móviles, casi imperceptible */
+        /* La primera capa es un overlay oscuro para "apagar" el oso */
+        background-image: linear-gradient(rgba(16, 26, 20, 0.5), rgba(16, 26, 20, 0.5)), url('https://iconape.com/wp-content/files/hi/194343/svg/194343.svg'), var(--bg-gradient);
+        background-size: 100% auto, contain, auto; /* Ajustamos el tamaño del oso para que sea más pequeño si es necesario */
+        background-position: center bottom -50px, center, auto; /* Movemos el oso un poco hacia abajo */
+        /* Opcional: Si quieres que el oso DESAPAREZCA COMPLETAMENTE en móviles, usa: */
+        /* background-image: var(--bg-gradient); */
+        /* background-size: auto; */
+        /* background-position: center; */
     }
 
     .container {
@@ -270,8 +278,8 @@ footer {
     /* --- Tarjetas de riesgo optimizadas --- */
     .risk-header {
         padding: 15px;
-        flex-direction: column; /* Apilamos el título y la flecha en pantallas muy pequeñas si es necesario */
-        align-items: flex-start;
+        flex-direction: row; /* Volvemos a poner el título y la flecha en fila para ahorrar espacio */
+        align-items: center;
         text-align: left;
     }
     
@@ -281,21 +289,36 @@ footer {
 
     .risk-header h3 {
         font-size: 1.2rem; /* Título de la tarjeta más legible */
+        flex-grow: 1; /* Permite que el título ocupe el espacio restante */
     }
 
     .arrow {
-        position: absolute; /* Movemos la flecha a la esquina */
-        top: 20px;
-        right: 20px;
+        position: static; /* La flecha vuelve a su posición normal */
+        margin-left: 10px; /* Un poco de espacio a la izquierda de la flecha */
     }
 
     .risk-body {
-        padding: 0 20px;
+        padding: 0 20px 15px; /* Añadimos padding inferior cuando está abierto */
         color: var(--text-primary); /* Hacemos el texto un poco más brillante para mejor lectura */
     }
+    .risk-body p { margin-bottom: 5px; } /* Reducimos el margen entre párrafos */
+
 
     /* --- Sección de Emergencia más clara --- */
+    .emergency-steps h4 {
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+    .emergency-steps p {
+        margin-left: 25px; /* Ajustamos el margen para que no se vea tan apretado */
+        font-size: 0.95rem;
+    }
+
     .emergency-contact span {
         font-size: 1.8rem; /* El número 911 un poco más pequeño */
+    }
+
+    footer {
+        padding: 20px 10px; /* Footer más compacto */
     }
 }
