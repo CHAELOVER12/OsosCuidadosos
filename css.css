@@ -1,0 +1,232 @@
+/* --- Variables de Diseño y Estilos Generales (TEMA FIME) --- */
+:root {
+    --fime-green: #00592f;
+    --bg-dark: #101a14;
+    --bg-gradient: linear-gradient(160deg, #1c3327 0%, #101a14 100%);
+    --border-color: rgba(255, 255, 255, 0.15);
+    --text-primary: #f0f0f0;
+    --text-secondary: #c0c0c0;
+    
+    /* Variables de color para los títulos de las tarjetas */
+    --color-red-text: #ff8a80;
+    --color-white-text: #ffffff;
+    --color-yellow-text: #ffd180;
+    --color-blue-text: #82b1ff;
+
+    /* Nuevas variables para el fondo de las tarjetas (Glassmorphism) */
+    --card-bg-red: rgba(231, 76, 60, 0.35);
+    --card-bg-white: rgba(224, 224, 224, 0.25);
+    --card-bg-yellow: rgba(241, 196, 15, 0.3);
+    --card-bg-blue: rgba(52, 152, 219, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background-color: var(--bg-dark);
+    /* Capa 1: Oso, Capa 2: Gradiente */
+    background-image: url('https://iconape.com/wp-content/files/hi/194343/svg/194343.svg'), var(--bg-gradient);
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: contain, auto;
+    background-attachment: fixed;
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+p.subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+/* --- Encabezado --- */
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: rgba(0,0,0,0.2);
+}
+
+.header-content i {
+    font-size: 3rem;
+    color: var(--text-primary); /* Color cambiado a blanco para contraste */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Sombra más brillante */
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+/* --- Acordeón de Riesgos (Glassmorphism) --- */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.risk-card {
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    overflow: hidden; 
+}
+
+/* --- CORRECCIÓN: Aplicando el color de fondo a cada tarjeta --- */
+.risk-card:has(.flammable) { background: var(--card-bg-red); }
+.risk-card:has(.corrosive) { background: var(--card-bg-white); }
+.risk-card:has(.toxic)    { background: var(--card-bg-yellow); }
+.risk-card:has(.general)  { background: var(--card-bg-blue); }
+
+.risk-card:hover {
+    transform: translateY(-5px);
+}
+
+.risk-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    color: var(--text-primary);
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.risk-header.active {
+    border-bottom-color: var(--border-color);
+}
+
+.risk-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.risk-header img {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.risk-header h3 { font-size: 1.5rem; }
+
+.arrow {
+    font-size: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.risk-header.active .arrow {
+    transform: rotate(180deg);
+}
+
+.risk-body {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    color: var(--text-secondary);
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), padding 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.risk-body p { margin-bottom: 10px; }
+.risk-body p:last-child { margin-bottom: 0; }
+
+/* --- Colores de los TÍTULOS de las tarjetas --- */
+.flammable h3 { color: var(--color-red-text); }
+.corrosive h3 { color: var(--color-white-text); }
+.toxic h3 { color: var(--color-yellow-text); }
+.general h3 { color: var(--color-blue-text); }
+
+/* --- Sección de Emergencia --- */
+#emergencia .container {
+    background: rgba(28, 51, 39, 0.5); /* Mantenemos el verde FIME aquí */
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+#emergencia h2 i { color: var(--color-red); }
+
+.emergency-steps h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.emergency-steps h4:first-child { margin-top: 0; }
+.emergency-steps p { margin-left: 32px; color: var(--text-secondary); }
+
+.emergency-contact {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--color-red);
+    text-align: center;
+    border-radius: 10px;
+}
+
+.emergency-contact p {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+}
+.emergency-contact span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+/* --- Pie de Página --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #555;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Seguridad Química en Casa</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <i class="bi bi-shield-check"></i>
+            <h1>Química Segura en Casa</h1>
+            <p>Guía Interactiva de Riesgos y Primeros Auxilios</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="riesgos" class="container">
+            <h2>Niveles de Riesgo</h2>
+            <p class="subtitle">Haz clic en cada categoría para ver los detalles y precauciones.</p>
+
+            <div class="accordion">
+                <div class="risk-card flammable-card">
+                    <button class="risk-header flammable">
+                        <div class="risk-title">
+                            <img src="https://img.uline.com/is/image/uline/S-21342?$Mobile_Zoom$" alt="Pictograma Inflamable">
+                            <h3>Nivel Rojo: Inflamable</h3>
+                        </div>
+                        <i class="bi bi-chevron-down arrow"></i>
+                    </button>
+                    <div class="risk-body">
+                        <p><strong>¿Qué significa?</strong> Productos que pueden encenderse fácilmente con una chispa, calor o llama.</p>
+                        <p><strong>Ejemplos:</strong> Alcohol, aerosoles, quitaesmaltes, algunos desinfectantes.</p>
+                        <p><strong>Precaución:</strong> Mantener lejos de fuentes de calor, estufas o cigarros.</p>
+                    </div>
+                </div>
+
+                <div class="risk-card">
+                    <button class="risk-header corrosive">
+                        <div class="risk-title">
+                            <img src="https://img.uline.com/is/image/uline/S-21343?$ZoomHD$" alt="Pictograma Corrosivo">
+                            <h3>Nivel Blanco: Corrosivo</h3>
+                        </div>
+                        <i class="bi bi-chevron-down arrow"></i>
+                    </button>
+                    <div class="risk-body">
+                        <p><strong>¿Qué significa?</strong> Pueden quemar la piel, los ojos o dañar metales al contacto.</p>
+                        <p><strong>Ejemplos:</strong> Limpiadores de desagües, cloro (lejía), amoníaco, productos para limpiar hornos.</p>
+                        <p><strong>Precaución:</strong> Usar guantes y gafas. Evitar salpicaduras.</p>
+                    </div>
+                </div>
+
+                <div class="risk-card">
+                    <button class="risk-header toxic">
+                        <div class="risk-title">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2m-102n-_ZNep88vzTR29wr22arFO3rWrhg&s" alt="Pictograma Tóxico">
+                            <h3>Nivel Amarillo: Tóxico</h3>
+                        </div>
+                        <i class="bi bi-chevron-down arrow"></i>
+                    </button>
+                    <div class="risk-body">
+                        <p><strong>¿Qué significa?</strong> Pueden causar envenenamiento o ser mortales si se ingieren, inhalan o tocan.</p>
+                        <p><strong>Ejemplos:</strong> Pesticidas, veneno para ratas, insecticidas.</p>
+                        <p><strong>Precaución:</strong> Usar en áreas ventiladas. Lavarse las manos después de usar.</p>
+                    </div>
+                </div>
+                
+                <div class="risk-card">
+                    <button class="risk-header general">
+                        <div class="risk-title">
+                            <img src="https://img.uline.com/is/image/uline/S-21348?$Mobile_Zoom$" alt="Pictograma Atención">
+                            <h3>Nivel Azul: Cuidado General</h3>
+                        </div>
+                        <i class="bi bi-chevron-down arrow"></i>
+                    </button>
+                    <div class="risk-body">
+                        <p><strong>¿Qué significa?</strong> Son menos peligrosos, pero pueden causar irritación en la piel o los ojos.</p>
+                        <p><strong>Ejemplos:</strong> Limpiadores de vidrios, jabón de trastes, limpiadores multiusos.</p>
+                        <p><strong>Precaución:</strong> Evitar el contacto prolongado con la piel y el contacto con los ojos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="emergencia" class="container">
+            <h2><i class="bi bi-exclamation-triangle-fill"></i> Protocolo de Emergencia</h2>
+            <div class="emergency-steps">
+                <h4><i class="bi bi-droplet-fill"></i> Contacto con la Piel</h4>
+                <p>Lava inmediatamente la zona afectada con abundante agua y jabón durante al menos 15 minutos.</p>
+
+                <h4><i class="bi bi-eye-fill"></i> Contacto con los Ojos</h4>
+                <p>Enjuaga el ojo con agua corriente durante 15-20 minutos. Mantén el párpado abierto.</p>
+
+                <h4><i class="bi bi-wind"></i> Inhalación de Vapores</h4>
+                <p>Lleva a la persona a un lugar con aire fresco inmediatamente. Busca ayuda si respira con dificultad.</p>
+
+                <h4><i class="bi bi-mouth-fill"></i> Ingestión</h4>
+                <p><strong>NO provoques el vómito.</strong> Llama a emergencias de inmediato y ten el envase del producto a la mano.</p>
+
+                <div class="emergency-contact">
+                    <p>En cualquier caso, llama al número de emergencias</p>
+                    <span><i class="bi bi-telephone-fill"></i> 911</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Osos cuidadosos - Proyecto de Química</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
