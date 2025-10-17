@@ -27,17 +27,31 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.7;
-    background-color: var(--bg-dark);
-    /* Capa 1: Oso, Capa 2: Gradiente */
-    background-image: url('https://iconape.com/wp-content/files/hi/194343/svg/194343.svg'), var(--bg-gradient);
-    background-repeat: no-repeat, repeat;
-    background-position: center;
-    background-size: contain, auto;
+    /* La ruta a tu imagen del oso. ¡Asegúrate de que sea la correcta! */
+    background-image: url('ruta-de-tu-imagen/oso.png');
+
+    /* --- Aquí está la magia --- */
+
+    /* 1. Evita que la imagen se repita */
+    background-repeat: no-repeat;
+
+    /* 2. Centra la imagen en la página (horizontal y verticalmente) */
+    background-position: center center;
+
+    /* 3. Fija la imagen para que no se mueva al hacer scroll */
     background-attachment: fixed;
-    color: var(--text-primary);
-    overflow-x: hidden;
+
+    /* 4. (Opcional) Ajusta el tamaño de la imagen. 'cover' hace que cubra
+          todo el fondo sin deformarse. 'contain' hace que se vea completa. */
+    background-size: contain; /* Puedes probar con 'cover' también */
+
+
+    /* --- Mantén el resto de tus estilos --- */
+    background-color: #000000; /* O el color de fondo que tenías */
+    color: #FFFFFF;           /* El color del texto */
+    font-family: sans-serif;  /* La fuente que usas */
+    /* etc. */
+}
 }
 
 .container {
@@ -322,3 +336,4 @@ footer {
         padding: 20px 10px; /* Footer más compacto */
     }
 }
+
